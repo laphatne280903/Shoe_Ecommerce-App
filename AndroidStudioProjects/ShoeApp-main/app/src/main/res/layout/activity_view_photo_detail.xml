@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/viewphotodetail"
+    tools:context=".sampledata.ViewPhotoDetail">
+
+        <ImageView
+            android:id="@+id/iv_detail"
+            android:layout_width="387dp"
+            android:layout_height="500dp"
+            android:layout_gravity="center"
+            android:layout_centerHorizontal="true"
+            android:padding="10dp"></ImageView>
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_viewPhotoDetail"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="20dp"
+            app:navigationIcon="@drawable/ic_arrow_foreground"
+            android:background="@drawable/nav_bottom_rounded_shape"/>
+        <TextView
+            android:id="@+id/tv_detail_title"
+            android:layout_marginTop="20dp"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_below="@+id/iv_detail"
+            android:textSize="25dp"
+            android:paddingHorizontal="10dp"
+            android:text="Caption title">
+        </TextView>
+        <TextView
+            android:id="@+id/shop_now_btn"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="40dp"
+            android:text="Shop Now"
+            android:textSize="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_below="@id/iv_detail"
+            android:layout_toRightOf="@id/tv_detail_title"
+            android:gravity="center"
+            android:background="@drawable/nav_bottom_rounded_shape"/>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_detail_title">
+            <TextView
+                android:id="@+id/tv_detail_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingHorizontal="10dp"
+                android:textSize="18dp"
+                android:text="Details"
+                android:padding="10dp"/>
+        </ScrollView>
+
+</RelativeLayout>

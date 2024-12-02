@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailedActivity"
+    android:background="#FDFDFD">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent" >
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/cardView">
+            <ImageView
+                android:id="@+id/detailed_img"
+                android:layout_width="match_parent"
+                android:layout_height="360dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_launcher_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_detail"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="20dp"
+                app:navigationIcon="@drawable/ic_arrow_foreground"
+                android:background="@drawable/nav_bottom_rounded_shape"/>
+        </RelativeLayout>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="30px"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detailed_img">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/detailed_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Shoe Name"
+                    android:textSize="26sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:layout_toEndOf="@id/detailed_name"
+                        android:text="Rating score:"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:id="@+id/my_rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="7dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_toEndOf="@id/detailed_name"
+                        android:text="5.0"
+                        android:textStyle="bold"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/detailed_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="100"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:text="Size"
+                        android:textStyle="bold"
+                        android:textSize="20sp" />
+                    <Spinner
+                        android:id="@+id/spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:background="@drawable/nav_bottom_rounded_shape"
+                        android:layout_marginLeft="20dp"
+                        android:textColor="@color/black"
+                        android:textSize="28dp"
+                        android:textAlignment="center" />
+
+                </LinearLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/nav_bottom_rounded_shape">
+
+                    <!--                    <ImageView-->
+                    <!--                        android:id="@+id/remove_item"-->
+                    <!--                        android:layout_width="30dp"-->
+                    <!--                        android:layout_height="30dp"-->
+                    <!--                        android:layout_marginRight="8dp"-->
+                    <!--                        android:src="@drawable/minus" />-->
+
+                    <ImageButton
+                        android:id="@+id/remove_item"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:background="@drawable/round_imagebutton"
+                        android:layout_marginLeft="6dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_minus_foreground"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/quantity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/add_item"
+                        app:layout_constraintStart_toEndOf="@id/remove_item"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageButton
+                        android:id="@+id/add_item"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_marginRight="6dp"
+                        android:background="@drawable/round_imagebutton"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_plus_foreground"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <!--                    <ImageView-->
+                    <!--                        android:id="@+id/add_item"-->
+                    <!--                        android:layout_width="30dp"-->
+                    <!--                        android:layout_height="30dp"-->
+                    <!--                        android:layout_marginLeft="8dp"-->
+                    <!--                        android:src="@drawable/plus" />-->
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@id/cardView"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center_horizontal">
+
+                    <Button
+                        android:id="@+id/add_to_cart"
+                        android:layout_width="320dp"
+                        android:layout_height="60dp"
+                        android:layout_marginBottom="6dp"
+                        android:backgroundTint="#323232"
+                        android:padding="14dp"
+                        android:text="Add to cart"
+                        android:textSize="18sp"
+                        android:elevation="4dp"
+                        android:textColor="@color/white"
+                        app:cornerRadius="50dp"
+                        app:layout_constraintBottom_toTopOf="@+id/favourite"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <Button
+                        android:id="@+id/favourite"
+                        android:layout_width="320dp"
+                        android:layout_height="60dp"
+                        android:backgroundTint="#FFFFFF"
+                        android:padding="14dp"
+                        android:text="Favourite"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        app:cornerRadius="50dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:strokeColor="#595959"
+                        app:strokeWidth="1dp" />
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="Description"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/detailed_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="15dp"
+                    android:text="Shoe description" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="horizontal">
+
+                    <RatingBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:isIndicator="true"
+                        android:numStars="5"
+                        android:outlineSpotShadowColor="#FFC107"
+                        android:scaleX="0.45"
+                        android:scaleY="0.45"
+                        android:stepSize="0.5"
+                        android:transformPivotX="5dp"
+                        android:transformPivotY="15dp"
+                        android:translationX="0dp" />
+
+                    <TextView
+                        android:layout_width="210dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_toEndOf="@id/detailed_name"
+                        android:text="Write your review"
+                        android:textSize="15sp"
+                        android:textStyle="italic"
+                        android:translationX="-130dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+</ScrollView>
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+    <!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--    xmlns:tools="http://schemas.android.com/tools"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="match_parent"-->
+    <!--    tools:context=".DetailedActivity"-->
+    <!--    android:background="#FDFDFD">-->
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:orientation="vertical"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" >-->
+    <!--        <RelativeLayout-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            app:layout_constraintBottom_toTopOf="@+id/cardView">-->
+    <!--            <ImageView-->
+    <!--                android:id="@+id/detailed_img"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="360dp"-->
+    <!--                android:scaleType="centerCrop"-->
+    <!--                android:src="@drawable/ic_launcher_background"-->
+    <!--                app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                app:layout_constraintStart_toStartOf="parent"-->
+    <!--                app:layout_constraintTop_toTopOf="parent"-->
+    <!--                android:transitionName="img_transition"/>-->
+    <!--            <androidx.appcompat.widget.Toolbar-->
+    <!--                android:id="@+id/toolbar_detail"-->
+    <!--                android:layout_width="50dp"-->
+    <!--                android:layout_height="50dp"-->
+    <!--                android:layout_marginTop="25dp"-->
+    <!--                android:layout_marginLeft="20dp"-->
+    <!--                app:navigationIcon="@drawable/ic_arrow_foreground"-->
+    <!--                android:background="@drawable/nav_bottom_rounded_shape"/>-->
+    <!--        </RelativeLayout>-->
+    <!--        <androidx.cardview.widget.CardView-->
+    <!--            android:id="@+id/cardView"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_margin="12dp"-->
+    <!--            app:cardCornerRadius="10dp"-->
+    <!--            app:cardElevation="20px"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toBottomOf="@id/detailed_img">-->
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="match_parent"-->
+    <!--                android:layout_marginLeft="20dp"-->
+    <!--                android:layout_marginRight="20dp"-->
+    <!--                android:orientation="vertical">-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/detailed_name"-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:text="Shoe Name"-->
+    <!--                    android:textSize="26sp"-->
+    <!--                    android:textStyle="bold"-->
+    <!--                    android:transitionName="shoe_name_transition"/>-->
+
+    <!--                <LinearLayout-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="30dp"-->
+
+    <!--                    android:orientation="horizontal">-->
+
+    <!--                    <ImageView-->
+    <!--                        android:layout_width="25dp"-->
+    <!--                        android:layout_height="25dp"-->
+    <!--                        android:scaleType="centerCrop"-->
+    <!--                        android:src="@drawable/rating" />-->
+
+    <!--                    <TextView-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:layout_marginLeft="4dp"-->
+    <!--                        android:layout_marginTop="0dp"-->
+    <!--                        android:layout_toEndOf="@id/detailed_name"-->
+    <!--                        android:text="Rating score:"-->
+    <!--                        android:textStyle="italic"-->
+    <!--                        android:textSize="18sp" />-->
+    <!--                    <TextView-->
+    <!--                        android:id="@+id/my_rating"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:layout_marginLeft="7dp"-->
+    <!--                        android:layout_marginTop="0dp"-->
+    <!--                        android:layout_toEndOf="@id/detailed_name"-->
+    <!--                        android:text="5.0"-->
+    <!--                        android:textSize="18sp"-->
+    <!--                        android:textStyle="bold|italic"/>-->
+    <!--                </LinearLayout>-->
+
+
+
+    <!--                <LinearLayout-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+
+    <!--                    android:orientation="horizontal">-->
+
+    <!--                    <TextView-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:layout_gravity="left"-->
+    <!--                        android:layout_marginRight="15dp"-->
+    <!--                        android:text="Price:"-->
+    <!--                        android:textSize="22sp"-->
+
+    <!--                        android:textStyle="bold" />-->
+
+    <!--                    <TextView-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:text="$"-->
+    <!--                        android:textSize="22sp"-->
+    <!--                        android:textStyle="bold" />-->
+
+    <!--                    <TextView-->
+    <!--                        android:id="@+id/detailed_price"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:text="100"-->
+    <!--                        android:textSize="22sp"-->
+    <!--                        android:textStyle="bold" />-->
+
+    <!--                </LinearLayout>-->
+
+    <!--                <LinearLayout-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:orientation="horizontal">-->
+
+    <!--                    <TextView-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:layout_marginTop="10dp"-->
+    <!--                        android:text="Size"-->
+    <!--                        android:textStyle="bold"-->
+    <!--                        android:textSize="22sp" />-->
+    <!--                    <Spinner-->
+    <!--                        android:id="@+id/spinner"-->
+    <!--                        android:layout_width="250dp"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:layout_marginBottom="10dp"-->
+    <!--                        android:background="@drawable/nav_bottom_rounded_shape"-->
+    <!--                        android:elevation="4dp"-->
+    <!--                        android:layout_marginTop="6dp"-->
+    <!--                        android:layout_marginLeft="20dp"-->
+    <!--                        android:padding="14dp"-->
+    <!--                        android:textColor="@color/black"-->
+    <!--                        android:textSize="30dp"-->
+    <!--                        android:textAlignment="center"-->
+    <!--                        />-->
+
+
+    <!--                </LinearLayout>-->
+
+
+    <!--                <LinearLayout-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_margin="10dp"-->
+    <!--                    android:gravity="center_horizontal"-->
+    <!--                    android:orientation="horizontal">-->
+
+    <!--                    <ImageView-->
+    <!--                        android:id="@+id/remove_item"-->
+    <!--                        android:layout_width="30dp"-->
+    <!--                        android:layout_height="30dp"-->
+    <!--                        android:layout_marginRight="8dp"-->
+    <!--                        android:src="@drawable/minus" />-->
+
+    <!--                    <TextView-->
+    <!--                        android:id="@+id/quantity"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:text="1"-->
+    <!--                        android:layout_marginBottom="5dp"-->
+    <!--                        android:textSize="24sp"-->
+    <!--                        android:textStyle="bold" />-->
+
+    <!--                    <ImageView-->
+    <!--                        android:id="@+id/add_item"-->
+    <!--                        android:layout_width="30dp"-->
+    <!--                        android:layout_height="30dp"-->
+    <!--                        android:layout_marginLeft="8dp"-->
+    <!--                        android:src="@drawable/plus" />-->
+
+    <!--                </LinearLayout>-->
+
+    <!--                <LinearLayout-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:orientation="vertical"-->
+    <!--                    app:layout_constraintTop_toBottomOf="@id/cardView"-->
+    <!--                    android:layout_marginTop="30dp"-->
+    <!--                    android:layout_marginBottom="20dp"-->
+    <!--                    android:gravity="center_horizontal">-->
+
+    <!--                    <Button-->
+    <!--                        android:id="@+id/add_to_cart"-->
+    <!--                        android:layout_width="320dp"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:layout_marginBottom="10dp"-->
+    <!--                        android:backgroundTint="#CFCFCF"-->
+    <!--                        android:padding="14dp"-->
+    <!--                        android:text="Add to cart"-->
+    <!--                        android:textSize="16sp"-->
+    <!--                        android:elevation="4dp"-->
+    <!--                        android:textColor="@color/black"-->
+    <!--                        app:cornerRadius="50dp"-->
+    <!--                        app:layout_constraintBottom_toTopOf="@+id/buy_now"-->
+    <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                        app:layout_constraintStart_toStartOf="parent"></Button>-->
+
+    <!--                    <Button-->
+    <!--                        android:id="@+id/buy_now"-->
+    <!--                        android:layout_width="320dp"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:backgroundTint="#1B1B1B"-->
+    <!--                        android:padding="14dp"-->
+    <!--                        android:textSize="16sp"-->
+    <!--                        android:text="Buy now"-->
+    <!--                        app:cornerRadius="50dp"-->
+    <!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                        app:layout_constraintStart_toStartOf="parent"></Button>-->
+    <!--                </LinearLayout>-->
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_marginTop="10dp"-->
+    <!--                    android:layout_marginBottom="5dp"-->
+    <!--                    android:text="Description"-->
+    <!--                    android:textSize="22sp"-->
+    <!--                    android:textStyle="bold" />-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/detailed_desc"-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_marginLeft="8dp"-->
+    <!--                    android:layout_marginRight="8dp"-->
+    <!--                    android:layout_marginBottom="15dp"-->
+    <!--                    android:text="Shoe description" />-->
+    <!--                <LinearLayout-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="40dp"-->
+    <!--                    android:layout_marginLeft="10dp"-->
+    <!--                    android:orientation="horizontal">-->
+
+    <!--                    <RatingBar-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:clickable="true"-->
+    <!--                        android:isIndicator="true"-->
+    <!--                        android:numStars="5"-->
+    <!--                        android:outlineSpotShadowColor="#FFC107"-->
+    <!--                        android:scaleX="0.45"-->
+    <!--                        android:scaleY="0.45"-->
+    <!--                        android:stepSize="0.5"-->
+    <!--                        android:transformPivotX="5dp"-->
+    <!--                        android:transformPivotY="15dp"-->
+    <!--                        android:translationX="0dp" />-->
+
+    <!--                    <TextView-->
+    <!--                        android:layout_width="210dp"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:layout_marginLeft="10dp"-->
+    <!--                        android:layout_marginTop="8dp"-->
+    <!--                        android:layout_toEndOf="@id/detailed_name"-->
+    <!--                        android:text="Write your review"-->
+    <!--                        android:textSize="15sp"-->
+    <!--                        android:textStyle="italic"-->
+    <!--                        android:translationX="-130dp" />-->
+    <!--                </LinearLayout>-->
+
+    <!--            </LinearLayout>-->
+    <!--        </androidx.cardview.widget.CardView>-->
+    <!--    </LinearLayout>-->
+
+    <!--</ScrollView>-->

@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "46306807415",
+    "firebase_url": "https://shoe-f5860-default-rtdb.firebaseio.com",
+    "project_id": "shoe-f5860",
+    "storage_bucket": "shoe-f5860.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:46306807415:android:668c2639416f19fdcfc072",
+        "android_client_info": {
+          "package_name": "com.example.LogIn"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhxNX5H_GhlwA1nZ2LD7G1MrMDMrvUZME"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:46306807415:android:80ff7b0b0b1cb30bcfc072",
+        "android_client_info": {
+          "package_name": "com.example.authenciate"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhxNX5H_GhlwA1nZ2LD7G1MrMDMrvUZME"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:46306807415:android:abcddcaa3ad2f147cfc072",
+        "android_client_info": {
+          "package_name": "com.example.giaodienchinh_doan"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhxNX5H_GhlwA1nZ2LD7G1MrMDMrvUZME"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

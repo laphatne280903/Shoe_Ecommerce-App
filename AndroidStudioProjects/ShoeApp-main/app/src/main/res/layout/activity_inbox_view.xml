@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AnotherNav.InboxViewActivity">
+
+    <TextView
+        android:id="@+id/ibox_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="INBOX"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:padding="20dp"/>
+    <LinearLayout
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_below="@+id/ibox_title"
+        android:background="@color/black"
+        android:orientation="horizontal" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/inbox_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/line"/>
+</RelativeLayout>

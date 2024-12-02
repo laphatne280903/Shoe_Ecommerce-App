@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Base.Theme.GiaoDienChinh_DoAn">
+        <item name="android:windowActivityTransitions">true</item>
+    </style>
+    <style name="TitleTextAppearance_Bold" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">25sp</item>
+    </style>
+</resources>

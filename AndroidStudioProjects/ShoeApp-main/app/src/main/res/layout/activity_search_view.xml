@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AnotherNav.SearchViewActivity">
+    <SearchView
+        android:layout_below="@+id/search_toolbar"
+        android:id="@+id/search_view_field"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:queryHint="Search your favorite shoes">
+    </SearchView>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@+id/search_view_field"
+        android:id="@+id/search_list_results"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/search_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#D9E4ED"
+        app:title="Search"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:navigationIcon="@drawable/ic_arrow_foreground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</RelativeLayout>

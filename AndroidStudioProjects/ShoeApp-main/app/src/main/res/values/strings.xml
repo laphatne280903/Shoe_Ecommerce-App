@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">GiaoDienChinh_DoAn</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="facebook_app_id">644586471189699</string>
+    <string name="fb_login_protocol_scheme">fb1234</string>
+    <string name="facebook_client_token">d75942b4b543f6fccf57731a61bd02d9</string>
+
+</resources>
